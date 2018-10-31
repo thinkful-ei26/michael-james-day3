@@ -1,7 +1,12 @@
+'use strict';
 
-
-const obj = [{name: 'henry', jobTitle: 'cars'},{name: 'mike', jobTitle: 'janitor'},{name: 'james', jobTitle: 'programmer'}]   
+const obj = [{name: 'henry', jobTitle: 'Janitor', boss: "Kelly"},{name: 'Kelly', jobTitle: 'Founder', boss: "Self"},{name: 'james', jobTitle: 'programmer', boss: "Kelly"}];   
 
 obj.forEach(element => {
-    console.log(element.name, element.jobTitle)    
+    if(element.jobTitle !== 'Founder'){
+        console.log(`${element.jobTitle} ${element.name} reports to ${element.boss}.`);
+    } else {
+        console.log(`${element.jobTitle} ${element.name} doesn't report to anybody.`);
+    }
+
 });
