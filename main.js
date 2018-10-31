@@ -7,9 +7,9 @@
 // sayHello => a function that returns the string 'hello'
 
 
-function objectCreator() {
-    return { foo: 'bar', answerToUniverse: 42, 'olly olly': 'oxen free', sayHello: () => 'hello' };
-}
+// 
+const objectCreator = () => new Object({ foo: 'bar', answerToUniverse: 42, 'olly olly': 'oxen free', sayHello: () => 'hello' });
+
 
 function updateObject(obj){
     return (obj.foo = 'foo', obj.bar = 'bar', obj.bizz = 'bizz', obj.bang = 'bang');
