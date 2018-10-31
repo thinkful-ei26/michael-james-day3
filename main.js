@@ -20,17 +20,23 @@ function updateObject(obj){
 const myTestObj = Object.assign(objectCreator());
 const myTestObj2 = objectCreator();
 
-console.log(`myfirst object is set to: ${(myTestObj.foo)}`);
-console.log(`mysecond object is set to: ${Object.keys(myTestObj2)}`);
+// console.log(`myfirst object is set to: ${(myTestObj.foo)}`);
+// console.log(`mysecond object is set to: ${Object.keys(myTestObj2)}`);
 
 updateObject(myTestObj);
 updateObject(myTestObj2);
 
-console.log(`object is updated to: ${myTestObj.foo}`);
-console.log(`mysecond object is updated to: ${Object.keys(myTestObj2)}`);
+// console.log(`object is updated to: ${myTestObj.foo}`);
+// console.log(`mysecond object is updated to: ${Object.keys(myTestObj2)}`);
 
 
-
+function deleteKeys(obj){
+    delete obj.foo;
+    delete obj.bar;
+    return obj;
+}
+deleteKeys(myTestObj);
+console.log(myTestObj);
 // Modify the updateObject function (which takes a single argument (obj)) so that it adds the following key/value pairs to obj and returns it:
 
 // foo => 'foo'
