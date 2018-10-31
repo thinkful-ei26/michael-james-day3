@@ -20,5 +20,27 @@ function personMaker() {
   michael.firstName = "michael";
   michael.lastName = "mckay";
   //console.log(michael.fullName);
-  console.log(michael.fullName());
+  //console.log(michael.fullName());
   //console.log(michael);
+
+
+
+  function objecters() {
+    const x = {
+      _name : 'michael',
+      _name : 'sally',
+    }
+    return x;
+  }
+
+  
+
+  const bob = objecters();
+  delete bob._name;
+  let myArray = [1,2,3,4,bob];
+  console.log(myArray);
+  console.log(bob._name);
+  console.log(bob);
+  console.log(Object.keys(bob));
+
+

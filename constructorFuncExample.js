@@ -10,7 +10,7 @@ Animal.prototype = {
         console.log("My name is " + this.name + " and I'm an Animal.");
     }
 };
-//let animal = Object.create(Animal.prototype);
+
 
 function Bird(name){
 	this.name = name;		//public
@@ -18,7 +18,10 @@ function Bird(name){
     this.isWarmblooded = function(){console.log("am i warm? "+ this.warmblooded);};
     this.getWeight = function(){
 			return console.log("My private weight is: " + weight);
-		};			//this makes .getWeight any instances' method (&closure)
+        };	
+    this.setWeight = function(num){
+        weight = num;
+    };				//this makes .getWeight any instances' method (&closure)
 }
 
 Bird.prototype = Object.create(Animal.prototype);
@@ -29,7 +32,7 @@ Bird.prototype.fly = function(){
 };
 
 let duck = new Bird("Daffy");
-
+console.log(`Object keys: ${Object.keys(duck)}`);
 let aliveMixin = function(obj){
     
     obj.isAlive = function(){
@@ -43,14 +46,14 @@ duck.fly();     //from bird
 duck.getWeight(); //from bird method, private bird value;
 duck.isAlive();
 duck.isWarmblooded();
-console.log("Is duck warm? " + duck.warmblooded);
-console.log("name-"+duck.name);    //public var
-console.log("weight-"+duck.weight);//private var this shows undefined. correctly as is out of scope!
+// console.log("Is duck warm? " + duck.warmblooded);
+// console.log("name-"+duck.name);    //public var
+// console.log("weight-"+duck.weight);//private var this shows undefined. correctly as is out of scope!
 
 function whatsMyParent(objectToCheck, stringToAsk){
     return objectToCheck.constructor.toString().indexOf(stringToAsk) > -1;
 }
-console.log("duck is bird? " + whatsMyParent(duck, "Bird")); //should return true;
-console.log("duck Sandwich? " + whatsMyParent(duck, "turDucken"));//expected false;
-
-console.log(duck instanceof Bird); // Easy check if duck is Bird
+// console.log("duck is bird? " + whatsMyParent(duck, "Bird")); //should return true;
+// console.log("duck Sandwich? " + whatsMyParent(duck, "turDucken"));//expected false;
+// console.log(`duck constructor string: ${duck.constructor.toString().indexOf("Bird")}`);
+// console.log(duck instanceof Bird); // Easy check if duck is Bird
