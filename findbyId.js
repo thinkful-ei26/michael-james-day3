@@ -6,7 +6,7 @@ items is an array of objects.
   The function should look for an item with the id idNum in the array items.
    If found, it should return that item.*/
 
-const data = [{id: 1, foo: 'bar'}, {id: 2, foo: 'bizz'}]
+const data = [{id: 1, foo: 'bar'}, {id: 2, foo: 'bizz'}];
 
 function findById(items, idNum){
     const found = items.find(element => {
